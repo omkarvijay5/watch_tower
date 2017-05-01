@@ -7,7 +7,12 @@ from django.core.validators import URLValidator
 
 
 class Bookmark(models.Model):
+    """
+    Boommark is a model which is used to bookmark(save) an url which you like
+    """
 
-	name = models.CharField(max_length=50)
+    # name is used to provide a name to the bookmark. It can also be used as an alias for the url
+    name = models.CharField(max_length=50)
 
-	url = models.TextField(validators=[URLValidator()])
+    # The url to be bookmarked
+    url = models.TextField(validators=[URLValidator()])
