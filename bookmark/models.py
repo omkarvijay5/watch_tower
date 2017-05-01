@@ -16,3 +16,6 @@ class Bookmark(models.Model):
 
     # The url to be bookmarked
     url = models.TextField(validators=[URLValidator()])
+
+    def __unicode__(self):
+        return self.url
