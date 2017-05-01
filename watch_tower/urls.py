@@ -16,8 +16,13 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from bookmark.views import index
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    url(r'^api/', include('bookmark.urls'))
+    url(r'^api/', include('bookmark.urls')),
+
+    url(r'^$', index, name='index'),
 ]
