@@ -5,12 +5,20 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+        <script src="{% static 'js/app.js' %}"></script>
+        <script src="{% static 'js/route.js' %}"></script>
+        <script src="{% static 'js/controllers/BookmarkListController.js' %}"></script>
+        <script src="{% static 'js/services/BookmarkListService.js' %}"></script>
     </head>
 
-    <body ng-app="blog">
+    <body ng-app="bookmark">
 
         <div class="container">
 
@@ -25,37 +33,20 @@
                 </div><!-- /.container-fluid -->
             </nav>
 
-
-            <div class="row">
-
+                <!-- The main angular js dynamic render -->
                 {% verbatim %}
-                    <!-- left side bar -->
-                    <div class="col-md-3">
-                    </div>
-                    <!-- end of left side bar -->
 
-                    <!-- articles content -->
-                    <div class="col-md-9">
-
-                        <!-- main articles content -->
-                        <div class="content row">
-                            <div class="content">
-                                <div ng-view></div>
-                            </div>
+                    <!-- main bookmark content -->
+                    <div class="content">
+                        <div class="content">
+                            <div ng-view></div>
                         </div>
-                        <!-- end of main articles content -->
-
-                        <!-- what read next start -->
-                        <div class="row">
-                            <what-read-next></what-read-next>
-                        </div>
-                        <!-- end of what read next -->
-
                     </div>
-                    <!-- end of articles content -->
+                    <!-- end of main bookmark content -->
+
                 {% endverbatim %}
+                <!-- end of the main angular js dynamic render -->
 
-            </div>
         </div>
 
     </body>
