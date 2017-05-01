@@ -10,7 +10,13 @@ from bookmark.models import Bookmark
 from bookmark.serializers import BookmarkSerializer
 
 
-class BookmarkApi(generics.ListCreateAPIView):
+class BookmarkApi(generics.RetrieveUpdateDestroyAPIView):
+    model = Bookmark
+    queryset = Bookmark.objects.all()
+    serializer_class = BookmarkSerializer
+
+
+class BookmarkCreateListApi(generics.ListCreateAPIView):
     model = Bookmark
     serializer_class = BookmarkSerializer
     queryset = Bookmark.objects.all()
