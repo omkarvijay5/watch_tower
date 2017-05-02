@@ -1,8 +1,8 @@
 function BookmarkDeleteController($scope, $routeParams, $http, $location) {
     
-    // calling our submit function.
+    // calling our delete bookmark function.
     $scope.deleteBookmark = function(bookmark_id) {
-        // Posting data to create bookmakr
+        // Posting data to delete bookmark
         $http({
             method  : 'DELETE',
             url     : '/api/bookmarks/' + bookmark_id.toString() + '/',

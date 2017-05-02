@@ -5,9 +5,9 @@ function BookmarkEditController($scope, $routeParams, $http, $location, Bookmark
 
     var bookmark_id = $routeParams.id
     
-    // calling our submit function.
+    // calling our submit function to update the bookmark
     $scope.editBookmark = function() {
-        // Posting data to create bookmakr
+        // updating data to update bookmakr
         $http({
             method  : 'PUT',
             url     : '/api/bookmarks/' + bookmark_id.toString() + '/',

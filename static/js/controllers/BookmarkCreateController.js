@@ -3,7 +3,7 @@ function BookmarkCreateController($scope, $routeParams, $http, $location) {
     // create a blank bookmark object to handle form data.
     $scope.bookmark = {};
     
-    // calling our submit function.
+    // calling our bookmark create function.
     $scope.createBookmark = function() {
         // Posting data to create bookmakr
         $http({

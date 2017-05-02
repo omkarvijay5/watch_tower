@@ -10,7 +10,7 @@ from bookmark.models import Bookmark
 
 @admin.register(Bookmark)
 class BookmarkAdmin(admin.ModelAdmin):
-	"""
-	bookmark admin page to add or modify from admin
-	"""
+    """
+    bookmark admin page to add or modify from admin
+    """
     pass

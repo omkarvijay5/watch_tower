@@ -35,4 +35,4 @@ class BookmarkCreateListApi(generics.ListCreateAPIView):
     """
     model = Bookmark
     serializer_class = BookmarkSerializer
-    queryset = Bookmark.objects.all()
+    queryset = Bookmark.objects.all().order_by('name')

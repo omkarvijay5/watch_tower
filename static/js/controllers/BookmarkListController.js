@@ -14,6 +14,8 @@ angular
   .controller('BookmarkListController', BookmarkListController)
 
 
+
+// search bookmarks implementation
 angular.module('bookmark').filter('searchBookmark', function(){
 
 	// All filters must return a function. The first parameter
