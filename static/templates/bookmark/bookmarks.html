@@ -1,15 +1,25 @@
 <h3>Bookmarks</h3>
 
-<a type="button" class="btn btn-primary" ng-href="#!/bookmarks/create">Add a bookmark</a>
+<div class="row">
+	<div class="col-md-9">
+		<input class="form-control input-lg" type="text" ng-model="searchString" placeholder="Search Bookmarks" />
+	</div>
 
-<ul>
-    <div ng-repeat="bookmark in $ctrl.bookmarks ">
-        <!-- list of bookmarks -->
-        <li>
-            <h3 ><a ng-href="#!/bookmarks/{{bookmark.id}}">{{bookmark.name}}</a></h3>
-            <strong ><a ng-href="#!/bookmarks/edit/{{bookmark.id}}">edit</a></strong>
-            <strong ><a ng-click="deleteBookmark(bookmark.id)" ng-controller="BookmarkDeleteController">delete</a></strong>
-        </li>
-        <!-- end of list of bookmarks -->
-    </div>
-</ul>
+	<div class="col-md-3">
+		<a type="button" class="btn btn-primary" ng-href="#!/bookmarks/create">Add a bookmark</a>
+	</div>
+</div>
+
+<div class="row">
+	<ul>
+	    <div ng-repeat="bookmark in $ctrl.bookmarks | searchBookmark:searchString">
+	        <!-- list of bookmarks -->
+	        <li>
+	            <h3 ><a ng-href="#!/bookmarks/{{bookmark.id}}">{{bookmark.name}}</a></h3>
+	            <strong ><a ng-href="#!/bookmarks/edit/{{bookmark.id}}">edit</a></strong>
+	            <strong ><a ng-click="deleteBookmark(bookmark.id)" ng-controller="BookmarkDeleteController">delete</a></strong>
+	        </li>
+	        <!-- end of list of bookmarks -->
+	    </div>
+	</ul>
+</div>
