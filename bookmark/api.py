@@ -11,12 +11,28 @@ from bookmark.serializers import BookmarkSerializer
 
 
 class BookmarkApi(generics.RetrieveUpdateDestroyAPIView):
+    """
+    endpoint: /api/bookmarks/<pk>/
+    
+    used to perform following operations:
+    GET
+    UPDATE
+    PUT
+    DELETE
+    """
     model = Bookmark
     queryset = Bookmark.objects.all()
     serializer_class = BookmarkSerializer
 
 
 class BookmarkCreateListApi(generics.ListCreateAPIView):
+    """
+    endpoint: /api/bookmarks/
+    
+    use to perform following operations:
+    GET (list of bookmarks)
+    POST (create bookmark)
+    """
     model = Bookmark
     serializer_class = BookmarkSerializer
     queryset = Bookmark.objects.all()
