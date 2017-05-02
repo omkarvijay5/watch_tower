@@ -1,14 +1,16 @@
-function BookmarkCreateController($scope, $routeParams, $http, $location) {
+function BookmarkEditController($scope, $routeParams, $http, $location, BookmarkDetailService) {
 
     // create a blank bookmark object to handle form data.
     $scope.bookmark = {};
+
+    var bookmark_id = $routeParams.id
     
     // calling our submit function.
-    $scope.createBookmark = function() {
+    $scope.editBookmark = function() {
         // Posting data to create bookmakr
         $http({
-            method  : 'POST',
-            url     : '/api/bookmarks/',
+            method  : 'PUT',
+            url     : '/api/bookmarks/' + bookmark_id.toString() + '/',
             data    : $scope.bookmark,
             headers : {'Content-Type': 'application/json'},
         })
@@ -34,8 +36,14 @@ function BookmarkCreateController($scope, $routeParams, $http, $location) {
         });
     };
 
+    $scope.bookmark = BookmarkDetailService.get_bookmark(bookmark_id).
+    then(function success(response) {
+        $scope.bookmark = response.data;
+    
+    });
+
 }
 
 angular
   .module('bookmark')
-  .controller('BookmarkCreateController', BookmarkCreateController)
+  .controller('BookmarkEditController', BookmarkEditController)

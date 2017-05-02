@@ -1,0 +1,21 @@
+<a type="button" class="btn btn-primary" ng-href="#!">Back</a>
+
+<form name="userForm" ng-submit="editBookmark()">
+
+    <div class="form-group">
+        <label>Name:</label>
+        <div>
+            <span class="alert-danger" ng-show="errorName">{{errorName}}</span>
+        </div>
+        <input type="text" name="name" class="form-control" ng-model="bookmark.name">
+    </div>
+    
+    <div class="form-group">
+        <label>URL:</label>
+        <span class="alert-danger"  ng-show="errorUrl">{{errorUrl}}</span>
+        <input type="text" name="username" class="form-control" ng-model="bookmark.url">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Edit</button>
+
+</form>

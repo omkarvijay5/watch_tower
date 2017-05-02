@@ -6,7 +6,8 @@
     <div ng-repeat="bookmark in $ctrl.bookmarks ">
         <!-- list of bookmarks -->
         <li>
-            <h3><a ng-href="#!/bookmarks/{{bookmark.id}}">{{bookmark.name}}</h3>
+            <h3 ><a ng-href="#!/bookmarks/{{bookmark.id}}">{{bookmark.name}}</a></h3>
+            <strong ><a ng-href="#!/bookmarks/edit/{{bookmark.id}}">edit</a></strong>
         </li>
         <!-- end of list of bookmarks -->
     </div>
