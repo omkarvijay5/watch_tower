@@ -33,4 +33,11 @@ bookmark.config(function($routeProvider) {
     }).
     otherwise({redirectTo: '/'})
 
+    .when("/bookmarks/delete/:id", {
+        templateUrl: TEMPLATE_CONFIG + "bookmark/bookmark_edit.html",
+        controller: 'BookmarkEditController',
+        controllerAs: '$ctrl'
+    }).
+    otherwise({redirectTo: '/'})
+
 });
