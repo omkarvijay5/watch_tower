@@ -1,0 +1,1 @@
+web: gunicorn watch_tower.wsgi --log-file -
