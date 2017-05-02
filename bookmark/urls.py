@@ -8,8 +8,8 @@ from django.conf.urls import url
 from bookmark.api import BookmarkApi, BookmarkCreateListApi
 
 
+# url patterns for the bookmark api
 urlpatterns = [
-    # url(r'^(?P<url>(.*))/$', BookmarkApi.as_view(), name='bookmark_api')
     url(r'^bookmarks/$', BookmarkCreateListApi.as_view(), name='bookmark_list_create_api'),
     url(r'^bookmarks/(?P<pk>[0-9]+)/$', BookmarkApi.as_view(), name='bookmark_detail_api')
 ]

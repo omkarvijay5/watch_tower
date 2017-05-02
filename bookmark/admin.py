@@ -10,5 +10,7 @@ from bookmark.models import Bookmark
 
 @admin.register(Bookmark)
 class BookmarkAdmin(admin.ModelAdmin):
-    # list_display = ('name', 'url')
+	"""
+	bookmark admin page to add or modify from admin
+	"""
     pass

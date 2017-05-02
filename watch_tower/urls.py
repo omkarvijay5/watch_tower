@@ -20,9 +20,12 @@ from bookmark.views import index
 
 
 urlpatterns = [
+    # register default admin urls
     url(r'^admin/', admin.site.urls),
 
+    # bookmark api end points
     url(r'^api/', include('bookmark.urls')),
 
+    # landing url for the bookmarks
     url(r'^$', index, name='index'),
 ]

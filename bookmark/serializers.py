@@ -6,7 +6,7 @@ from bookmark.models import Bookmark
 
 class BookmarkSerializer(serializers.ModelSerializer):
     """
-    Serializing bookmarks
+    Serializing bookmark objects to json
     """
     class Meta:
         model = Bookmark
