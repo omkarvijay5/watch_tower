@@ -21,6 +21,8 @@
         <script src="{% static 'js/controllers/BookmarkDetailController.js' %}"></script>
         <script src="{% static 'js/services/BookmarkDetailService.js' %}"></script>
 
+        <script src="{% static 'js/controllers/BookmarkCreateController.js' %}"></script>
+
     </head>
 
     <body ng-app="bookmark">
@@ -38,19 +40,20 @@
                 </div><!-- /.container-fluid -->
             </nav>
 
-                <!-- The main angular js dynamic render -->
-                {% verbatim %}
+            <!-- The main angular js dynamic render -->
+            {% verbatim %}
 
-                    <!-- main bookmark content -->
+                <!-- main bookmark content -->
+                <div class="content">
                     <div class="content">
-                        <div class="content">
-                            <div ng-view></div>
-                        </div>
-                    </div>
-                    <!-- end of main bookmark content -->
+                        <div ng-view></div>
 
-                {% endverbatim %}
-                <!-- end of the main angular js dynamic render -->
+                    </div>
+                </div>
+                <!-- end of main bookmark content -->
+
+            {% endverbatim %}
+            <!-- end of the main angular js dynamic render -->
 
         </div>
 

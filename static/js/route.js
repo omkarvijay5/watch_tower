@@ -12,11 +12,19 @@ bookmark.config(function($routeProvider) {
     }).
     otherwise({redirectTo: '/'})
 
+    .when("/bookmarks/create", {
+        templateUrl: TEMPLATE_CONFIG + "bookmark/bookmark_create.html",
+        controller: 'BookmarkCreateController',
+        controllerAs: '$ctrl'
+    }).
+    otherwise({redirectTo: '/'})
+
     .when("/bookmarks/:id", {
         templateUrl: TEMPLATE_CONFIG + "bookmark/bookmark_detail.html",
         controller: 'BookmarkDetailController',
         controllerAs: '$ctrl'
     }).
     otherwise({redirectTo: '/'})
+
 
 });
